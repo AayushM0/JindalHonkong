@@ -1,5 +1,8 @@
 import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
+// Primary: transparent cutout. Fallback: swap import below to helloImg if cutout shows edge artifacts.
+import heroImg from '../assets/Adobe Express - file copy.png';
+// import heroImg from '../assets/hello.jpg';
 
 export default function Hero() {
   const handleScroll = (id) => {
@@ -9,11 +12,19 @@ export default function Hero() {
   return (
     <section
       id="platform"
-      className="relative min-h-[60vh] bg-white bg-grid pt-32 pb-24 px-6 overflow-hidden flex flex-col items-center justify-center"
+      className="relative h-screen bg-white bg-grid pt-24 pb-0 px-6 overflow-hidden flex flex-col items-center justify-center"
       aria-label="Hero Landing"
     >
-      {/* Centered Hero Content */}
-      <div className="max-w-4xl text-center flex flex-col items-center animate-fade-in-up">
+      {/* Decorative image layer — z-10, sits above background, below text */}
+      <img
+        src={heroImg}
+        alt=""
+        aria-hidden="true"
+        className="absolute bottom-0 w-full h-[50%] object-cover object-bottom pointer-events-none select-none z-10"
+      />
+
+      {/* Foreground text content — z-20, always above image layer */}
+      <div className="relative z-20 max-w-4xl text-center flex flex-col items-center animate-fade-in-up">
 
         {/* Pulsing Badge */}
         <div className="inline-flex items-center gap-2 bg-[#eff6ff] text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold mb-6 border border-primary/10">
@@ -27,8 +38,8 @@ export default function Hero() {
           Greater China &amp; Global Markets
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-slate-500 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mb-8">
+        {/* Subtitle with Glassmorphism */}
+        <p className="text-white text-base md:text-lg font-semibold leading-relaxed max-w-2xl mx-auto mb-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-xl px-6 py-4 rounded-xl text-center">
           Establish, operate, and scale your B2B operations with Hong Kong's premier B2B corporate advisory firm.
           Bookkeeping, tax planning, and statutory registry filings made seamless.
         </p>
