@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #F8FAFC;
+    color: #020617;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* ─── Scroll margin for sticky nav ─────────────── */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ─── Nav underline hover animation ────────────── */
+@layer components {
+  .nav-link {
+    @apply relative text-sm font-medium text-white/80 hover:text-white transition-colors duration-200 cursor-pointer;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-0.5 bg-gold w-0 transition-all duration-200 ease-out;
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold text-sm
+           transition-all duration-200 cursor-pointer
+           hover:shadow-accent hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-white/70 text-white px-6 py-3 rounded-lg font-semibold text-sm
+           transition-all duration-200 cursor-pointer
+           hover:border-white hover:bg-white/10 hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+
+  .btn-outline-navy {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold text-sm
+           transition-all duration-200 cursor-pointer
+           hover:bg-primary hover:text-white hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Card */
+  .service-card {
+    @apply bg-white rounded-xl p-6 shadow-card border border-border
+           transition-all duration-200 cursor-default
+           hover:shadow-card-hover hover:-translate-y-1 relative overflow-hidden;
+  }
+  .service-card::before {
+    content: '';
+    @apply absolute left-0 top-0 h-full w-1 bg-gold scale-y-0 transition-transform duration-200 origin-bottom;
+  }
+  .service-card:hover::before {
+    @apply scale-y-100;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-primary leading-tight;
+  }
+  .section-sub {
+    @apply text-muted-fg text-lg mt-3;
+  }
+}
+
+/* ─── Floating orbs (hero decorative) ──────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ─── Connector line animation ──────────────────── */
+.step-connector {
+  transform-origin: left center;
+  transition: transform 0.6s ease;
+}
+
+/* ─── Reduced motion ───────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .orb { display: none; }
+}
