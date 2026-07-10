@@ -73,12 +73,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background" aria-labelledby="contact-heading">
+    <section id="contact" className="py-16 bg-background" aria-labelledby="contact-heading">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <p className="text-gold font-medium text-sm tracking-widest uppercase mb-3">Get In Touch</p>
+          <p className="text-primary font-bold text-xs uppercase tracking-wider bg-blue-50 px-3 py-1.5 rounded-full mb-3 inline-block">Get In Touch</p>
           <h2 id="contact-heading" className="section-heading">Start the Conversation</h2>
           <p className="section-sub max-w-2xl mx-auto">
             Ready to establish your regional operations? Get in touch with our Hong Kong corporate desk.
@@ -218,7 +218,7 @@ export default function Contact() {
               <h3 className="font-semibold text-primary text-xl mb-2">Office Coordinates</h3>
               
               <div className="flex items-start gap-4">
-                <User className="text-gold mt-1 flex-shrink-0" size={20} aria-hidden="true" />
+                <User className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-muted-fg font-medium">Primary Contact</span>
                   <span className="text-primary font-medium text-base">Hem Jindal</span>
@@ -226,12 +226,12 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <Mail className="text-gold mt-1 flex-shrink-0" size={20} aria-hidden="true" />
+                <Mail className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-muted-fg font-medium">Email Desk</span>
                   <a
                     href="mailto:jindalsonslimited@gmail.com"
-                    className="text-accent hover:underline text-base font-medium"
+                    className="text-primary hover:underline text-base font-medium"
                   >
                     jindalsonslimited@gmail.com
                   </a>
@@ -239,14 +239,14 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <MessageCircle className="text-gold mt-1 flex-shrink-0" size={20} aria-hidden="true" />
+                <MessageCircle className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-muted-fg font-medium">WhatsApp / Direct Line</span>
                   <a
                     href="https://wa.me/85293511790"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:underline text-base font-medium block"
+                    className="text-primary hover:underline text-base font-medium block"
                   >
                     +852 9351 1790
                   </a>
@@ -254,7 +254,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <Phone className="text-gold mt-1 flex-shrink-0" size={20} aria-hidden="true" />
+                <Phone className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-muted-fg font-medium">Alternative Contact</span>
                   <a
@@ -267,7 +267,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <Clock className="text-gold mt-1 flex-shrink-0" size={20} aria-hidden="true" />
+                <Clock className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-muted-fg font-medium">Office Hours</span>
                   <span className="text-primary text-base font-medium">Mon–Fri, 09:00–18:00 HKT</span>
@@ -275,14 +275,14 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <MapPin className="text-gold mt-1 flex-shrink-0" size={20} aria-hidden="true" />
+                <MapPin className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-muted-fg font-medium">Hong Kong Office Address</span>
                   <a
                     href="https://maps.google.com/?q=Unit+No.+87,+Basement+1+Floor+(Lower+G/F),+Houston+Centre,+No.+63+Mody+Road,+Tsim+Sha+Tsui,+Kowloon,+Hong+Kong"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:underline text-sm leading-relaxed block font-medium mt-1"
+                    className="text-primary hover:underline text-sm leading-relaxed block font-medium mt-1"
                   >
                     Unit No. 87, Basement 1 Floor (Lower G/F), Houston Centre, No. 63 Mody Road, Tsim Sha Tsui, Kowloon, Hong Kong
                   </a>

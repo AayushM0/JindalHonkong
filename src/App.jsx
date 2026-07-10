@@ -1,32 +1,47 @@
 import React from 'react';
 import Header from './components/Header';
-import HeroVideoScrub from './components/HeroVideoScrub';
-import WhyHongKong from './components/WhyHongKong';
+import Hero from './components/Hero';
+
 import Services from './components/Services';
-import Formation from './components/Formation';
-import Advantages from './components/Advantages';
-import Values from './components/Values';
+import Stats from './components/Stats';
+import SecuritySection from './components/SecuritySection';
+import Faq from './components/Faq';
+import Cta from './components/Cta';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-background selection:bg-gold selection:text-white">
-      {/* Header Navigation */}
+    <div className="min-h-screen flex flex-col bg-white selection:bg-primary selection:text-white">
+      {/* Fixed Navigation Header */}
       <Header />
 
       {/* Main Sections */}
       <main className="flex-grow">
-        <HeroVideoScrub />
-        <WhyHongKong />
+        {/* Hero Landing with Dashboard Preview URL bar & Audit Logs table */}
+        <Hero />
+
+        
+        {/* 3-Column Core Modules Services Grid */}
         <Services />
-        <Formation />
-        <Advantages />
-        <Values />
+        
+        {/* KPI stats counter section */}
+        <Stats />
+        
+        {/* Cert Checklist and Security policy toggles */}
+        <SecuritySection />
+        
+        {/* HK Corporate Setup FAQ Accordion */}
+        <Faq />
+        
+        {/* Centered B2B Call to Action panel */}
+        <Cta />
+        
+        {/* Office coordinates and email/phone inquiry form */}
         <Contact />
       </main>
 
-      {/* Footer Navigation */}
+      {/* 6-Column Footer with System status online pulsing dot */}
       <Footer />
     </div>
   );
