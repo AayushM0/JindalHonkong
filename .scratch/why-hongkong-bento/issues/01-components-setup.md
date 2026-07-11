@@ -1,6 +1,6 @@
 # 01 — Component File & App Scaffolding
 
-Status: ready-for-agent
+Status: resolved
 
 ## What to build
 

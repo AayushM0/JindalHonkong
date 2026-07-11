@@ -20,7 +20,7 @@ export default function Hero() {
         src={heroImg}
         alt=""
         aria-hidden="true"
-        className="absolute bottom-0 w-full h-[50%] object-cover object-bottom pointer-events-none select-none z-10"
+        className="absolute bottom-0 w-full h-auto object-contain pointer-events-none select-none z-10"
       />
 
       {/* Foreground text content — z-20, always above image layer */}
@@ -38,8 +38,8 @@ export default function Hero() {
           Greater China &amp; Global Markets
         </h1>
 
-        {/* Subtitle with Glassmorphism */}
-        <p className="text-white text-base md:text-lg font-semibold leading-relaxed max-w-2xl mx-auto mb-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-xl px-6 py-4 rounded-xl text-center">
+        {/* Subtitle with Opaque Grid Background */}
+        <p className="text-slate-900 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mx-auto mb-8 bg-white bg-grid border border-slate-200 shadow-xl px-6 py-4 rounded-xl text-center">
           Establish, operate, and scale your B2B operations with Hong Kong's premier B2B corporate advisory firm.
           Bookkeeping, tax planning, and statutory registry filings made seamless.
         </p>
