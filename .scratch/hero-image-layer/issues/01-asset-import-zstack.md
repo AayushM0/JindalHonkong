@@ -1,6 +1,6 @@
 # 01 — Asset import & Z-stack scaffolding
 
-Status: ready-for-agent
+Status: resolved
 
 ## What to build
 

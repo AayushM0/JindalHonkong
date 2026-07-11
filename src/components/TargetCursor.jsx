@@ -51,6 +51,8 @@ const TargetCursor = ({
   const targetCornerPositionsRef = useRef(null);
   const tickerFnRef = useRef(null);
   const activeStrengthRef = useRef(0);
+  const xSettersRef = useRef([]);
+  const ySettersRef = useRef([]);
 
   const isMobile = useMemo(() => {
     if (typeof window === 'undefined') return false;
@@ -90,7 +92,10 @@ const TargetCursor = ({
     }
 
     const cursor = cursorRef.current;
-    cornersRef.current = cursor.querySelectorAll('.target-cursor-corner');
+    const corners = cursor.querySelectorAll('.target-cursor-corner');
+    cornersRef.current = corners;
+    xSettersRef.current = Array.from(corners).map(c => gsap.quickSetter(c, 'x', 'px'));
+    ySettersRef.current = Array.from(corners).map(c => gsap.quickSetter(c, 'y', 'px'));
 
     containingBlockRef.current = getContainingBlock(cursor);
     const getOffset = () => getContainingBlockOffset(containingBlockRef.current);
@@ -147,15 +152,9 @@ const TargetCursor = ({
         const finalX = currentX + (targetX - currentX) * strength;
         const finalY = currentY + (targetY - currentY) * strength;
 
-        const duration = strength >= 0.99 ? (parallaxOn ? 0.2 : 0) : 0.05;
-
-        gsap.to(corner, {
-          x: finalX,
-          y: finalY,
-          duration: duration,
-          ease: duration === 0 ? 'none' : 'power1.out',
-          overwrite: 'auto'
-        });
+        // Optimized: Use pre-cached quickSetters to directly update DOM properties without tween overhead
+        if (xSettersRef.current[i]) xSettersRef.current[i](finalX);
+        if (ySettersRef.current[i]) ySettersRef.current[i](finalY);
       });
     };
 

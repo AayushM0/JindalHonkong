@@ -1,6 +1,6 @@
 # 02 — Image positioning, sizing & edge blending
 
-Status: ready-for-agent
+Status: resolved
 
 ## What to build
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building, BookOpen, FileText, CreditCard, Calculator, ClipboardCheck, BarChart3, Monitor } from 'lucide-react';
+import ExpandOnHover from './ui/expand-cards';
 
 const servicesList = [
   {
@@ -85,36 +86,8 @@ export default function Services() {
           </p>
         </div>
 
-        {/* 3-Column Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map((service, index) => {
-            const Icon = service.icon;
-            const theme = ICON_THEMES[service.themeKey || 'blue'];
-            
-            return (
-              <article
-                key={service.title}
-                className="group relative bg-[#f8fafc] border border-slate-200 rounded-xl p-8 transition-all duration-300 ease-custom-ease hover:bg-white hover:border-slate-300 hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 flex flex-col justify-between"
-                style={{ borderRadius: '12px' }}
-              >
-                <div>
-                  {/* Tinted icon box */}
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 ${theme.container}`}>
-                    <Icon size={24} aria-hidden="true" />
-                  </div>
-
-                  <h3 className={`text-lg font-bold text-slate-900 mb-3 transition-colors duration-300 ${theme.titleHover}`}>
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-slate-500 text-sm leading-[1.6] font-normal">
-                    {service.description}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+        {/* Interactive Expandable Services Cards */}
+        <ExpandOnHover services={servicesList} />
 
       </div>
     </section>

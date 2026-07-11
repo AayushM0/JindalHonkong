@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
 import WhyHongKong from './components/WhyHongKong';
 import Services from './components/Services';
 import Stats from './components/Stats';
@@ -29,6 +30,9 @@ export default function App() {
       <main className="flex-grow">
         {/* Hero Landing with Dashboard Preview URL bar & Audit Logs table */}
         <Hero />
+
+        {/* About Us section with CardSwap interactive stack */}
+        <AboutUs />
 
         {/* Bento grid section outlining strategic advantages of Hong Kong */}
         <WhyHongKong />
