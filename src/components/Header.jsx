@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImg from '../assets/logo.jpeg';
+import logoImg from '../assets/logo.png';
 
 const links = [
   { label: 'About Us', href: '#about-us' },

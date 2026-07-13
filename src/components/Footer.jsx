@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
-import logoImg from '../assets/logo.jpeg';
+import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   const handleScroll = (href) => {
