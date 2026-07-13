@@ -27,7 +27,7 @@ export default function Cta() {
           regional operations?
         </h2>
         
-        <p className="text-slate-400 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-slate-200 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto mb-10">
           Connect with our corporate desk in Tsim Sha Tsui, Kowloon, Hong Kong. Set up multi-currency commercial bank accounts, reserved registry assets, and secure tax exemptions.
         </p>
 
