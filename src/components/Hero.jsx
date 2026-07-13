@@ -35,12 +35,12 @@ export default function Hero() {
         {/* Title */}
         <h1 className="text-[#020617] text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
           Your Gateway to <br className="hidden sm:inline" />
-          Greater China &amp; Global Markets
+          Hong Kong &amp; Greater China
         </h1>
 
         {/* Subtitle with Opaque Grid Background */}
         <p className="text-slate-900 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mx-auto mb-8 bg-white bg-grid border border-slate-200 shadow-xl px-6 py-4 rounded-xl text-center">
-          Establish, operate, and scale your B2B operations with Hong Kong's premier B2B corporate advisory firm.
+          Establish, operate, and scale your business operations with Hong Kong's premier corporate advisory firm.
           Bookkeeping, tax planning, and statutory registry filings made seamless.
         </p>
 
