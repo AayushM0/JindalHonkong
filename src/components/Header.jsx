@@ -3,10 +3,12 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const links = [
-  { label: 'Platform',  href: '#platform' },
-  { label: 'Solutions', href: '#services' },
-  { label: 'Security',  href: '#security' },
-  { label: 'FAQ',       href: '#faq' },
+  { label: 'About Us', href: '#about-us' },
+  { label: 'HK', href: '#why-hongkong' },
+  { label: 'Services', href: '#services' },
+  { label: 'Process', href: '#process' },
+  { label: 'Security', href: '#security' },
+  { label: 'FAQ', href: '#faq' },
 ];
 
 export default function Header() {
@@ -53,7 +55,7 @@ export default function Header() {
         </a>
 
         {/* Center-aligned nav links */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+        <nav className="hidden md:flex items-center gap-5" aria-label="Main navigation">
           {links.map((l) => (
             <button
               key={l.href}
@@ -65,14 +67,14 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Right-aligned Book Demo button */}
+        {/* Right-aligned Contact button */}
         <div className="hidden md:block">
           <button
             onClick={() => handleNav('#contact')}
             className="bg-slate-900 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer hover:bg-slate-800 hover:shadow-md active:scale-[0.98]"
-            aria-label="Book a consultation demo"
+            aria-label="Contact us"
           >
-            Book Demo
+            Contact
           </button>
         </div>
 
@@ -114,7 +116,7 @@ export default function Header() {
                 onClick={() => handleNav('#contact')}
                 className="bg-slate-900 text-white py-2.5 rounded-lg text-sm font-medium text-center w-full mt-2 hover:bg-slate-800"
               >
-                Book Demo
+                Contact
               </button>
             </nav>
           </motion.div>
