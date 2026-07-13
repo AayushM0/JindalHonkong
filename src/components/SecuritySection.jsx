@@ -87,7 +87,7 @@ export default function SecuritySection() {
                     className={`w-10 h-6 rounded-lg p-1 transition-all duration-300 relative focus:outline-none cursor-pointer border ${
                       policies.mfa 
                         ? 'bg-primary border-primary/20 shadow-[0_0_12px_rgba(37,99,235,0.45)]' 
-                        : 'bg-slate-150 border-slate-200 hover:bg-slate-200'
+                        : 'bg-slate-100 border-slate-200 hover:bg-slate-200'
                     }`}
                     style={{ borderRadius: '8px' }}
                     aria-label="Toggle Multi-Factor Authentication"
@@ -117,7 +117,7 @@ export default function SecuritySection() {
                     className={`w-10 h-6 rounded-lg p-1 transition-all duration-300 relative focus:outline-none cursor-pointer border ${
                       policies.ipWhitelist 
                         ? 'bg-primary border-primary/20 shadow-[0_0_12px_rgba(37,99,235,0.45)]' 
-                        : 'bg-slate-105 border-slate-200 hover:bg-slate-200'
+                        : 'bg-slate-100 border-slate-200 hover:bg-slate-200'
                     }`}
                     style={{ borderRadius: '8px' }}
                     aria-label="Toggle IP Access Whitelisting"
@@ -147,7 +147,7 @@ export default function SecuritySection() {
                     className={`w-10 h-6 rounded-lg p-1 transition-all duration-300 relative focus:outline-none cursor-pointer border ${
                       policies.keyRotation 
                         ? 'bg-primary border-primary/20 shadow-[0_0_12px_rgba(37,99,235,0.45)]' 
-                        : 'bg-slate-105 border-slate-200 hover:bg-slate-200'
+                        : 'bg-slate-100 border-slate-200 hover:bg-slate-200'
                     }`}
                     style={{ borderRadius: '8px' }}
                     aria-label="Toggle Automated Audit Key Rotation"

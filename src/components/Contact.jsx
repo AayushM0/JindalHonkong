@@ -56,7 +56,7 @@ export default function Contact() {
         setStatus('error');
         setErrorMsg('Something went wrong. Please try again or email us directly.');
       }
-    } catch (err) {
+    } catch {
       setStatus('error');
       setErrorMsg('Network error. Please try again or email us directly.');
     }

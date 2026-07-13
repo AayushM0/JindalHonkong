@@ -1,8 +1,6 @@
 import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
-// Primary: transparent cutout. Fallback: swap import below to helloImg if cutout shows edge artifacts.
 import heroImg from '../assets/Adobe Express - file copy.png';
-// import heroImg from '../assets/hello.jpg';
 
 export default function Hero() {
   const handleScroll = (id) => {

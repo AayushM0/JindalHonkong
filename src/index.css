@@ -29,11 +29,6 @@ html {
   }
 }
 
-/* ─── Layout Rhythm spacing (128px) ────────────── */
-.section-spacer {
-  margin-top: 128px;
-  margin-bottom: 128px;
-}
 
 section[id] {
   scroll-margin-top: 64px;
@@ -70,11 +65,7 @@ section[id] {
            focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2;
   }
 
-  .btn-outline {
-    @apply border border-border text-slate-600 px-5 py-2.5 rounded-lg font-medium text-sm
-           transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer
-           hover:bg-slate-50 hover:text-slate-900 active:scale-[0.98];
-  }
+
 
   /* Headings */
   .section-heading {
@@ -93,35 +84,7 @@ section[id] {
   animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Scroll reveal trigger class */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.reveal-on-scroll.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes blurFadeIn {
-  from {
-    filter: blur(6px);
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    filter: blur(0);
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-blur-fade {
-  opacity: 0;
-  animation: blurFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
 
 /* ─── Reduced Motion Overrides ─────────────────── */
 @media (prefers-reduced-motion: reduce) {
@@ -131,7 +94,7 @@ section[id] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .animate-fade-in-up, .reveal-on-scroll, .animate-blur-fade {
+  .animate-fade-in-up {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
