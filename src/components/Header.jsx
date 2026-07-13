@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoImg from '../assets/logo.jpeg';
 
 const links = [
   { label: 'About Us', href: '#about-us' },
@@ -46,9 +47,11 @@ export default function Header() {
           className="flex items-center gap-3 group cursor-pointer"
           aria-label="Jindalsons Limited — home"
         >
-          <div className="w-6 h-6 bg-[#020617] rounded flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
-            <div className="w-2.5 h-2.5 bg-[#2563eb] rounded-sm" />
-          </div>
+          <img
+            src={logoImg}
+            alt="Jindalsons Limited Logo"
+            className="w-7 h-7 object-contain rounded transition-transform duration-300 group-hover:rotate-6"
+          />
           <span className="text-[#020617] font-extrabold text-base tracking-tight">
             Jindalsons<span className="font-normal text-slate-500"> Limited</span>
           </span>

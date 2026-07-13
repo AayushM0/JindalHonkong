@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
+import logoImg from '../assets/logo.jpeg';
 
 export default function Footer() {
   const handleScroll = (href) => {
@@ -27,19 +28,21 @@ export default function Footer() {
           
           {/* Column 1: Logo & Address */}
           <div className="flex flex-col gap-5">
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="flex items-center gap-3 group cursor-pointer"
-              aria-label="Jindalsons Limited — home"
-            >
-              <div className="w-5.5 h-5.5 bg-white/10 rounded flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
-                <div className="w-2.5 h-2.5 bg-blue-500 rounded-sm" />
-              </div>
-              <span className="text-white font-extrabold text-base tracking-tight">
-                Jindalsons<span className="font-normal text-slate-400"> Ltd</span>
-              </span>
-            </a>
+        <a
+          href="#"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          className="flex items-center gap-3 group cursor-pointer"
+          aria-label="Jindalsons Limited — home"
+        >
+          <img
+            src={logoImg}
+            alt="Jindalsons Limited Logo"
+            className="w-7 h-7 object-contain rounded transition-transform duration-300 group-hover:rotate-6"
+          />
+          <span className="text-white font-extrabold text-base tracking-tight">
+            Jindalsons<span className="font-normal text-slate-400"> Ltd</span>
+          </span>
+        </a>
             
             <p className="text-xs text-slate-500 leading-relaxed">
               Hong Kong's premier enterprise corporate governance and advisory portal. Trusted compliance solutions for international founders.
