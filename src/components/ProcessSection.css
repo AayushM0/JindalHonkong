@@ -31,14 +31,14 @@
   z-index: 2;
   pointer-events: none;
   background: 
-    linear-gradient(to top, rgba(10, 10, 12, 0.85) 0%, rgba(10, 10, 12, 0) 50%),
-    linear-gradient(225deg, rgba(10, 10, 12, 0.6) 0%, rgba(10, 10, 12, 0) 35%);
+    linear-gradient(to top, rgba(10, 10, 12, 0.88) 0%, rgba(10, 10, 12, 0) 55%),
+    linear-gradient(225deg, rgba(10, 10, 12, 0.65) 0%, rgba(10, 10, 12, 0) 35%);
 }
 
 /* Persistent top-right header */
 .process-heading {
   position: absolute;
-  top: 6%;
+  top: 96px; /* Offset to clear the fixed navbar */
   right: 6%;
   text-align: right;
   max-width: 32%;
@@ -60,7 +60,7 @@
 
 .process-heading p {
   font-size: 1rem;
-  color: #64748b; /* slate-500 */
+  color: #cbd5e1; /* slate-300 for high readability on dark background */
 }
 
 /* Bottom-anchored card stack container */
@@ -96,19 +96,20 @@
 
 /* Cascade Offsets (Desktop standard) */
 .process-card[data-step="1"] {
-  left: 5%;
+  left: 4%;
   bottom: 0;
   z-index: 10;
 }
 
 .process-card[data-step="2"] {
-  left: 28%;
+  left: 27%;
   bottom: 25px;
   z-index: 11;
 }
 
 .process-card[data-step="3"] {
-  left: 51%;
+  left: 50%;
+  width: 23%;
   bottom: 50px;
   z-index: 12;
 }
@@ -225,6 +226,7 @@
   .process-card[data-step="3"] {
     left: 4%;
     bottom: 140px;
+    width: 44%;
   }
   
   .process-card[data-step="4"] {
@@ -244,7 +246,7 @@
   }
   
   .process-heading {
-    top: 4%;
+    top: 80px; /* Offset to clear the fixed navbar on mobile */
     left: 5%;
     right: 5%;
     text-align: center;
@@ -266,6 +268,10 @@
     right: 5% !important;
     bottom: 0 !important;
     padding: 1.25rem;
+  }
+  
+  .process-card[data-step="3"] {
+    width: 90% !important;
   }
   
   /* On mobile, cards will overlap directly on top of each other at bottom: 0,
