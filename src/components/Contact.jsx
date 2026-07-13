@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Mail, MessageCircle, Phone, MapPin, Clock, User, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Clock, User, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function Contact() {
   const reduced = useReducedMotion();
@@ -253,18 +253,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <Phone className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
-                <div>
-                  <span className="block text-xs uppercase tracking-wider text-muted-fg font-medium">Alternative Contact</span>
-                  <a
-                    href="tel:+85293511790"
-                    className="text-primary hover:underline text-base font-medium"
-                  >
-                    +852 9351 1790
-                  </a>
-                </div>
-              </div>
 
               <div className="flex items-start gap-4">
                 <Clock className="text-primary mt-1 flex-shrink-0" size={20} aria-hidden="true" />
