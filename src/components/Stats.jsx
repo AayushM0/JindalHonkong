@@ -91,7 +91,7 @@ export default function Stats() {
       ref={containerRef}
       id="stats" 
       className="relative py-16 bg-[#020617] overflow-hidden flex flex-col items-center"
-      aria-label="Quantifiable B2B Impact Metrics"
+      aria-label="Quantifiable Business Impact Metrics"
     >
       {/* Decorative background: concentric white circles with 10% opacity */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10 flex items-center justify-center select-none z-0">

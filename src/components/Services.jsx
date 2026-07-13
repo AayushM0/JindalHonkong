@@ -53,7 +53,7 @@ const servicesList = [
   {
     icon: Monitor,
     title: 'Technology Infrastructure',
-    description: 'Corporate email hosting, secure client portal setup, B2B information security strategy, and IT consulting.',
+    description: 'Corporate email hosting, secure client portal setup, enterprise information security strategy, and IT consulting.',
     themeKey: 'emerald'
   }
 ];
@@ -159,7 +159,7 @@ export default function Services() {
               Platform Modules
             </span>
             <h2 id="services-heading" className="text-5xl md:text-6xl font-extrabold uppercase tracking-tight text-[#020617] max-w-md leading-[1.05]">
-              Core B2B<br />
+              Core Corporate<br />
               Services
             </h2>
           </div>
@@ -179,7 +179,7 @@ export default function Services() {
       {/* Horizontal Cards Wrapper (Desktop absolute centered, Mobile natural, z-10) */}
       <div 
         ref={cardsWrapperRef} 
-        className="relative z-10 w-full mt-16 lg:mt-0 lg:absolute lg:inset-0 lg:flex lg:items-center lg:w-full lg:opacity-0"
+        className="relative z-10 w-full mt-16 overflow-x-auto pb-4 lg:pb-0 lg:overflow-visible lg:mt-0 lg:absolute lg:inset-0 lg:flex lg:items-center lg:w-full lg:opacity-0"
       >
         <div 
           ref={trackRef} 
