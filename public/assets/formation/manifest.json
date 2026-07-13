@@ -1,0 +1,15 @@
+﻿{
+    "frameCount":  160,
+    "tiers":  {
+                  "retina":  {
+                                 "prefix":  "/assets/formation/formation_2x_",
+                                 "pad":  3,
+                                 "ext":  "webp"
+                             },
+                  "standard":  {
+                                   "prefix":  "/assets/formation/formation_std_",
+                                   "pad":  3,
+                                   "ext":  "webp"
+                               }
+              }
+}

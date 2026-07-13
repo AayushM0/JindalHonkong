@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+AGENTS.md 
+docs/
+.agents/
+.scratch/
+.superpowers/
+
