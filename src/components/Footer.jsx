@@ -1,69 +1,32 @@
 import React from 'react';
-
-const FOOTER_SECTIONS = [
-  {
-    title: 'Platform',
-    links: [
-      { label: 'Formation Tool', href: '#platform', isScroll: true },
-      { label: 'Advisory Modules', href: '#services', isScroll: true },
-      { label: 'Metrics Board', href: '#stats', isScroll: true },
-      { label: 'Governance Console', href: '#security', isScroll: true }
-    ]
-  },
-  {
-    title: 'Solutions',
-    links: [
-      { label: 'Company Secretary', href: '#services', isScroll: true },
-      { label: 'Registered Office', href: '#services', isScroll: true },
-      { label: 'Accounting & Audit', href: '#services', isScroll: true },
-      { label: 'Corporate Banking', href: '#services', isScroll: true }
-    ]
-  },
-  {
-    title: 'Resources',
-    links: [
-      { label: 'HK Profits Tax Guide', href: '#platform', isScroll: true },
-      { label: 'Registry NAR1 Form', href: '#platform', isScroll: true },
-      { label: 'Compliance Calendar', href: '#platform', isScroll: true },
-      { label: 'Status Check API', href: '#platform', isScroll: true }
-    ]
-  },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About Us', href: '#platform', isScroll: true },
-      { label: 'Core Pillars', href: '#platform', isScroll: true },
-      { label: 'HK Advisory Desk', href: '#platform', isScroll: true },
-      { label: 'Careers', href: '#platform', isScroll: true }
-    ]
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Privacy Policy', href: '#platform', isScroll: true },
-      { label: 'Terms of Service', href: '#platform', isScroll: true },
-      { label: 'TCSP Secretary License', href: '#platform', isScroll: true },
-      { label: 'Service Agreement', href: '#platform', isScroll: true }
-    ]
-  }
-];
+import { Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   const handleScroll = (href) => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const navLinks = [
+    { label: 'About Us', href: '#about-us' },
+    { label: 'HK Advantages', href: '#why-hongkong' },
+    { label: 'Services', href: '#services' },
+    { label: 'Process', href: '#process' },
+    { label: 'Security', href: '#security' },
+    { label: 'FAQ', href: '#faq' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
   return (
     <footer className="bg-[#020617] text-slate-400 border-t border-slate-900" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
       
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-16">
         
-        {/* Main 6-Column Grid (logo/info + 5 sections) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-slate-900 pb-16">
+        {/* Main Simplified Columns Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-slate-900 pb-12">
           
-          {/* Column 1 (Logo & Tagline) - col-span-2 for 6-column rhythm */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          {/* Column 1: Logo & Address */}
+          <div className="flex flex-col gap-5">
             <a
               href="#"
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
@@ -79,59 +42,74 @@ export default function Footer() {
             </a>
             
             <p className="text-xs text-slate-500 leading-relaxed">
-              Hong Kong's premier enterprise B2B corporate governance and advisory portal. Trusted compliance solutions for international founders.
+              Hong Kong's premier enterprise corporate governance and advisory portal. Trusted compliance solutions for international founders.
             </p>
+
+            <div className="flex items-start gap-3 mt-2 text-xs">
+              <MapPin className="text-primary shrink-0 mt-0.5" size={14} />
+              <a
+                href="https://maps.google.com/?q=Unit+No.+87,+Basement+1+Floor+(Lower+G/F),+Houston+Centre,+No.+63+Mody+Road,+Tsim+Sha+Tsui,+Kowloon,+Hong+Kong"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-300"
+              >
+                Unit No. 87, Basement 1 Floor (Lower G/F), Houston Centre, No. 63 Mody Road, Tsim Sha Tsui, Kowloon, Hong Kong
+              </a>
+            </div>
           </div>
 
-          {/* Columns 2 to 6 (Platform, Solutions, Resources, Company, Legal) */}
-          {FOOTER_SECTIONS.map((section, sectionIdx) => (
-            <div key={sectionIdx} className="lg:col-span-2 flex flex-col gap-4">
-              <span className="text-xs font-bold text-slate-200 uppercase tracking-widest">
-                {section.title}
-              </span>
-              <nav className="flex flex-col gap-2.5 text-xs font-medium" aria-label={`${section.title} Links`}>
-                {section.links.map((link, linkIdx) => {
-                  if (link.isScroll) {
-                    return (
-                      <button
-                        key={linkIdx}
-                        onClick={() => handleScroll(link.href)}
-                        className="text-left hover:text-white transition-all duration-300 ease-custom-ease cursor-pointer"
-                      >
-                        {link.label}
-                      </button>
-                    );
-                  }
-                  return (
-                    <a
-                      key={linkIdx}
-                      href={link.href}
-                      className="hover:text-white transition-all duration-300 ease-custom-ease"
-                    >
-                      {link.label}
-                    </a>
-                  );
-                })}
-              </nav>
+          {/* Column 2: Contact Desk & Hours */}
+          <div className="flex flex-col gap-4 text-xs">
+            <span className="text-xs font-bold text-slate-200 uppercase tracking-widest">
+              Contact Desk
+            </span>
+
+            <div className="flex items-center gap-3 mt-1">
+              <Mail className="text-primary shrink-0" size={14} />
+              <a href="mailto:jindalsonslimited@gmail.com" className="hover:text-white transition-colors">
+                jindalsonslimited@gmail.com
+              </a>
             </div>
-          ))}
+
+            <div className="flex items-center gap-3">
+              <MessageCircle className="text-primary shrink-0" size={14} />
+              <a href="https://wa.me/85293511790" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                +852 9351 1790 (WhatsApp)
+              </a>
+            </div>
+
+            <div className="flex items-center gap-3 text-slate-500">
+              <Clock className="text-primary shrink-0" size={14} />
+              <span>Mon–Fri, 09:00–18:00 HKT</span>
+            </div>
+          </div>
+
+          {/* Column 3: Navigation links */}
+          <div className="flex flex-col gap-4 text-xs">
+            <span className="text-xs font-bold text-slate-200 uppercase tracking-widest">
+              Navigation
+            </span>
+            <nav className="grid grid-cols-2 gap-x-6 gap-y-2.5 font-medium" aria-label="Footer navigation">
+              {navLinks.map((link, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleScroll(link.href)}
+                  className="text-left hover:text-white transition-all duration-300 ease-custom-ease cursor-pointer"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </nav>
+          </div>
 
         </div>
 
-        {/* Bottom bar: Copyright & System Status */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 text-xs text-slate-500">
+        {/* Bottom bar */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 text-xs text-slate-500">
           <p>© 2026 Jindalsons Limited. All rights reserved.</p>
-          
-          <div className="flex items-center gap-6 flex-wrap justify-center">
-            {/* System Status pulsing dot */}
-            <div className="inline-flex items-center gap-2 text-slate-400 font-medium">
-              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
-              <span>All Systems Operational</span>
-            </div>
-            
-            <p className="max-w-[340px] text-center sm:text-right leading-relaxed text-[11px] text-slate-600">
-              Licensed Trust or Company Service Provider (TCSP) Registry Secretary. Filings subject to Inland Revenue approval.
-            </p>
+          <div className="flex items-center gap-2 text-slate-400 font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+            <span>All Systems Operational</span>
           </div>
         </div>
 
