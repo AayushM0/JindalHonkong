@@ -1,0 +1,15 @@
+{
+  "frameCount": 150,
+  "tiers": {
+    "standard": {
+      "prefix": "/assets/construction/construct_std_",
+      "pad": 3,
+      "ext": "webp"
+    },
+    "retina": {
+      "prefix": "/assets/construction/construct_2x_",
+      "pad": 3,
+      "ext": "webp"
+    }
+  }
+}
