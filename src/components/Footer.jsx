@@ -1,10 +1,11 @@
 import React from 'react';
 import { Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
 import logoImg from '../assets/logo.png';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Footer() {
   const handleScroll = (href) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(href);
   };
 
   const navLinks = [

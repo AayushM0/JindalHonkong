@@ -20,7 +20,7 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus('error');
@@ -29,36 +29,36 @@ export default function Contact() {
     }
 
     setStatus('submitting');
-    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
-
-    if (!endpoint) {
-      // Fallback to mailto
-      const subject = encodeURIComponent(`Inquiry from ${formData.name} (${formData.company || 'Individual'})`);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nCompany: ${formData.company}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
-      );
-      window.location.href = `mailto:jindalsonslimited@gmail.com?subject=${subject}&body=${body}`;
-      setStatus('success');
-      return;
-    }
 
     try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const phoneNumber = '85293511790';
+      const messageText = `Hello Jindalsons Limited,
 
-      if (response.ok) {
+I would like to make an inquiry.
+
+Name: ${formData.name}
+Company: ${formData.company || 'N/A'}
+Email: ${formData.email}
+Phone/WhatsApp: ${formData.phone || 'N/A'}
+
+Requirements:
+${formData.message}`;
+
+      const encodedText = encodeURIComponent(messageText);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+      // Open WhatsApp link in a new window/tab
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+      // Update UI to success state after a brief delay
+      setTimeout(() => {
         setStatus('success');
         setFormData({ name: '', company: '', email: '', phone: '', message: '' });
-      } else {
-        setStatus('error');
-        setErrorMsg('Something went wrong. Please try again or email us directly.');
-      }
-    } catch {
+      }, 500);
+    } catch (error) {
+      console.error('WhatsApp routing error:', error);
       setStatus('error');
-      setErrorMsg('Network error. Please try again or email us directly.');
+      setErrorMsg('Failed to route message via WhatsApp. Please try again or use the direct link on the right.');
     }
   };
 

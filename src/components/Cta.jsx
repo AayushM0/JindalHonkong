@@ -1,8 +1,9 @@
 import { ArrowRight } from 'lucide-react';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Cta() {
   const handleScroll = (id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(id);
   };
 
   return (

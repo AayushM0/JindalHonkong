@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoImg from '../assets/logo.png';
+import { scrollToSection } from '../utils/scroll';
 
 const links = [
   { label: 'About Us', href: '#about-us' },
@@ -24,7 +25,7 @@ export default function Header() {
 
   const handleNav = (href) => {
     setOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(href);
   };
 
   return (

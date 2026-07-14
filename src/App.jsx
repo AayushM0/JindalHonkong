@@ -23,6 +23,7 @@ export default function App() {
   useEffect(() => {
     // Initialize Lenis smooth scroll
     const lenis = new Lenis();
+    window.lenis = lenis;
 
     // Synchronize ScrollTrigger updates with Lenis scroll
     lenis.on('scroll', ScrollTrigger.update);
@@ -36,6 +37,7 @@ export default function App() {
 
     return () => {
       lenis.destroy();
+      window.lenis = null;
       gsap.ticker.remove(tick);
     };
   }, []);

@@ -1,10 +1,11 @@
 import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import heroImg from '../assets/Adobe Express - file copy.png';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Hero() {
   const handleScroll = (id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(id);
   };
 
   return (

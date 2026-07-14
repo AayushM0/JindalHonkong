@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Globe, Percent, Coins, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
+import { scrollToSection } from '../utils/scroll';
 
 const features = [
   {
@@ -92,7 +93,7 @@ export default function WhyHongKong() {
 
   const handleScroll = (href) => {
     if (href.startsWith('#')) {
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      scrollToSection(href);
     }
   };
 
