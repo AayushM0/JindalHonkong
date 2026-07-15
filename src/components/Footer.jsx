@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo3.png';
 import { scrollToSection } from '../utils/scroll';
 
 export default function Footer() {
