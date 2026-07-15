@@ -22,7 +22,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       setStatus('error');
       setErrorMsg('Please fill in all required fields.');
       return;
@@ -165,12 +165,13 @@ ${formData.message}`;
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-primary mb-1.5">
-                      Phone / WhatsApp
+                      Phone / WhatsApp <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
+                      required
                       value={formData.phone}
                       onChange={handleChange}
                       className="input w-full"
